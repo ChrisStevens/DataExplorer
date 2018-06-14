@@ -154,7 +154,7 @@ if ("plot_correlation" %in% names(report_config)) {
 if ("plot_prcomp" %in% names(report_config)) {
   cat("### Principle Component Analysis", fill = TRUE)
   if (!is.null(response)) {
-    dt <- na.omit(data[, -response])
+    dt <- na.omit(data)
     do.call(plot_prcomp, c(list("data" = dt), report_config[["plot_prcomp"]]))
   } else {
     do_call("plot_prcomp", na_omit = TRUE)
